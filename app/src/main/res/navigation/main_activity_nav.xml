@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/homepageFragment">
+
+    <fragment
+        android:id="@+id/additionFragment"
+        android:name="com.sevgiaykir.bottomnavigation.AdditionFragment"
+        android:label="fragment_addition"
+        tools:layout="@layout/fragment_addition" >
+        <action
+            android:id="@+id/transitionAddResult"
+            app:destination="@id/addResultFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplicationFragment"
+        android:name="com.sevgiaykir.bottomnavigation.MultiplicationFragment"
+        android:label="fragment_multiplication"
+        tools:layout="@layout/fragment_multiplication" >
+        <action
+            android:id="@+id/transitionMultiplyResult"
+            app:destination="@id/multiplyResultFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="com.sevgiaykir.bottomnavigation.HomepageFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" />
+    <fragment
+        android:id="@+id/addResultFragment"
+        android:name="com.sevgiaykir.bottomnavigation.AddResultFragment"
+        android:label="fragment_add_result"
+        tools:layout="@layout/fragment_add_result" >
+        <argument
+            android:name="addingResult"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+    <fragment
+        android:id="@+id/multiplyResultFragment"
+        android:name="com.sevgiaykir.bottomnavigation.MultiplyResultFragment"
+        android:label="fragment_multiply_result"
+        tools:layout="@layout/fragment_multiply_result" >
+        <argument
+            android:name="multiplyingResult"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
